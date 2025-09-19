@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Get A Quote - Logis Bootstrap Template</title>
+  <title>RNT - Cotización</title>
   <meta name="description" content="">
   <meta name="keywords" content="">
 
@@ -42,41 +42,46 @@
   <header id="header" class="header d-flex align-items-center fixed-top">
     <div class="container-fluid container-xl position-relative d-flex align-items-center">
 
-      <a href="index.html" class="logo d-flex align-items-center me-auto">
-        <!-- Uncomment the line below if you also wish to use an image logo -->
-        <!-- <img src="assets/img/logo.png" alt=""> -->
-        <h1 class="sitename">Logis</h1>
-      </a>
+<a href="index.html" class="logo d-flex align-items-center me-auto">
+  <img
+    src="assets/img/logo_rect.png"
+    alt="Red Nacional – Transporte de Carga y Encomiendas"
+    class="site-logo"
+    width="160" height="40"
+    loading="eager" decoding="async"
+  />
+  <h1 class="visually-hidden">Red Nacional</h1>
+</a>
 
       <nav id="navmenu" class="navmenu">
         <ul>
-          <li><a href="index.html">Home<br></a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="services.html">Services</a></li>
-          <li><a href="pricing.html">Pricing</a></li>
-          <li class="dropdown"><a href="#"><span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+          <li><a href="index.html">Inicio<br></a></li>
+          <li><a href="about.html">Nosotros</a></li>
+          <li><a href="services.html">Servicios</a></li>
+          <li><a href="pricing.html">Tarifas</a></li>
+          <li class="dropdown"><a href="#"><span>Menú</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul>
-              <li><a href="#">Dropdown 1</a></li>
-              <li class="dropdown"><a href="#"><span>Deep Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+              <li><a href="#">Menú 1</a></li>
+              <li class="dropdown"><a href="#"><span>Submenú</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
                 <ul>
-                  <li><a href="#">Deep Dropdown 1</a></li>
-                  <li><a href="#">Deep Dropdown 2</a></li>
-                  <li><a href="#">Deep Dropdown 3</a></li>
-                  <li><a href="#">Deep Dropdown 4</a></li>
-                  <li><a href="#">Deep Dropdown 5</a></li>
+                  <li><a href="#">Submenú 1</a></li>
+                  <li><a href="#">Submenú 2</a></li>
+                  <li><a href="#">Submenú 3</a></li>
+                  <li><a href="#">Submenú 4</a></li>
+                  <li><a href="#">Submenú 5</a></li>
                 </ul>
               </li>
-              <li><a href="#">Dropdown 2</a></li>
-              <li><a href="#">Dropdown 3</a></li>
-              <li><a href="#">Dropdown 4</a></li>
+              <li><a href="#">Menú 2</a></li>
+              <li><a href="#">Menú 3</a></li>
+              <li><a href="#">Menú 4</a></li>
             </ul>
           </li>
-          <li><a href="contact.html">Contact</a></li>
+          <li><a href="contact.html">Contacto</a></li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
 
-      <a class="btn-getstarted" href="get-a-quote.html">Get a Quote</a>
+      <a class="btn-getstarted" href="get-a-quote.html">Solicitar cotización</a>
 
     </div>
   </header>
@@ -86,12 +91,12 @@
     <!-- Page Title -->
     <div class="page-title dark-background" data-aos="fade" style="background-image: url(assets/img/page-title-bg.jpg);">
       <div class="container position-relative">
-        <h1>Get a Quote</h1>
-        <p>Esse dolorum voluptatum ullam est sint nemo et est ipsa porro placeat quibusdam quia assumenda numquam molestias.</p>
+        <h1>Solicitar cotización</h1>
+        <p>Obtén una cotización precisa y rápida para tus necesidades de transporte. Completa el formulario y nuestro equipo se pondrá en contacto contigo a la brevedad.</p>
         <nav class="breadcrumbs">
           <ol>
-            <li><a href="index.html">Home</a></li>
-            <li class="current">Get A Quote</li>
+            <li><a href="index.html">Inicio</a></li>
+            <li class="current">Solicitar cotización</li>
           </ol>
         </nav>
       </div>
@@ -108,53 +113,53 @@
 
           <div class="col-lg-7" data-aos="fade-up" data-aos-delay="200">
             <form action="forms/get-a-quote.php" method="post" class="php-email-form">
-              <h3>Get a quote</h3>
-              <p>Vel nobis odio laboriosam et hic voluptatem. Inventore vitae totam. Rerum repellendus enim linead sero park flows.</p>
+              <h3>Solicita una cotización</h3>
+              <p>Proporciónanos los detalles de tu envío y te ofreceremos una tarifa competitiva y ajustada a tus necesidades.</p>
 
               <div class="row gy-4">
 
                 <div class="col-md-6">
-                  <input type="text" name="departure" class="form-control" placeholder="City of Departure" required="">
+                  <input type="text" name="departure" class="form-control" placeholder="Ciudad de origen" required="">
                 </div>
 
                 <div class="col-md-6">
-                  <input type="text" name="delivery" class="form-control" placeholder="Delivery City" required="">
+                  <input type="text" name="delivery" class="form-control" placeholder="Ciudad de destino" required="">
                 </div>
 
                 <div class="col-md-6">
-                  <input type="text" name="weight" class="form-control" placeholder="Total Weight (kg)" required="">
+                  <input type="text" name="weight" class="form-control" placeholder="Peso total (kg)" required="">
                 </div>
 
                 <div class="col-md-6">
-                  <input type="text" name="dimensions" class="form-control" placeholder="Dimensions (cm)" required="">
+                  <input type="text" name="dimensions" class="form-control" placeholder="Dimensiones (cm)" required="">
                 </div>
 
                 <div class="col-lg-12">
-                  <h4>Your Personal Details</h4>
+                  <h4>Tus datos personales</h4>
                 </div>
 
                 <div class="col-12">
-                  <input type="text" name="name" class="form-control" placeholder="Name" required="">
+                  <input type="text" name="name" class="form-control" placeholder="Nombre" required="">
                 </div>
 
                 <div class="col-12 ">
-                  <input type="email" class="form-control" name="email" placeholder="Email" required="">
+                  <input type="email" class="form-control" name="email" placeholder="Correo electrónico" required="">
                 </div>
 
                 <div class="col-12">
-                  <input type="text" class="form-control" name="phone" placeholder="Phone" required="">
+                  <input type="text" name="phone" class="form-control" placeholder="Teléfono" required="">
                 </div>
 
                 <div class="col-12">
-                  <textarea class="form-control" name="message" rows="6" placeholder="Message" required=""></textarea>
+                  <textarea class="form-control" name="message" rows="6" placeholder="Mensaje" required=""></textarea>
                 </div>
 
                 <div class="col-12 text-center">
-                  <div class="loading">Loading</div>
+                  <div class="loading">Cargando</div>
                   <div class="error-message"></div>
-                  <div class="sent-message">Your quote request has been sent successfully. Thank you!</div>
+                  <div class="sent-message">Tu solicitud de cotización ha sido enviada. ¡Gracias!</div>
 
-                  <button type="submit">Get a quote</button>
+                  <button type="submit">Obtener cotización</button>
                 </div>
 
               </div>
@@ -175,9 +180,9 @@
       <div class="row gy-4">
         <div class="col-lg-5 col-md-12 footer-about">
           <a href="index.html" class="logo d-flex align-items-center">
-            <span class="sitename">Logis</span>
+            <span class="sitename">Red Nacional</span>
           </a>
-          <p>Cras fermentum odio eu feugiat lide par naso tierra. Justo eget nada terra videa magna derita valies darta donna mare fermentum iaculis eu non diam phasellus.</p>
+          <p>Optimizamos la logística para ofrecer soluciones de transporte eficientes y confiables, conectando su negocio con el mundo.</p>
           <div class="social-links d-flex mt-4">
             <a href=""><i class="bi bi-twitter-x"></i></a>
             <a href=""><i class="bi bi-facebook"></i></a>
@@ -187,41 +192,41 @@
         </div>
 
         <div class="col-lg-2 col-6 footer-links">
-          <h4>Useful Links</h4>
+          <h4>Enlaces útiles</h4>
           <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About us</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Terms of service</a></li>
-            <li><a href="#">Privacy policy</a></li>
+            <li><a href="#">Inicio</a></li>
+            <li><a href="#">Nosotros</a></li>
+            <li><a href="#">Servicios</a></li>
+            <li><a href="#">Términos del servicio</a></li>
+            <li><a href="#">Política de privacidad</a></li>
           </ul>
         </div>
 
         <div class="col-lg-2 col-6 footer-links">
-          <h4>Our Services</h4>
+          <h4>Nuestros servicios</h4>
           <ul>
-            <li><a href="#">Web Design</a></li>
-            <li><a href="#">Web Development</a></li>
-            <li><a href="#">Product Management</a></li>
+            <li><a href="#">Diseño web</a></li>
+            <li><a href="#">Desarrollo web</a></li>
+            <li><a href="#">Gestión de producto</a></li>
             <li><a href="#">Marketing</a></li>
-            <li><a href="#">Graphic Design</a></li>
+            <li><a href="#">Diseño gráfico</a></li>
           </ul>
         </div>
 
         <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
-          <h4>Contact Us</h4>
+          <h4>Contáctanos</h4>
           <p>A108 Adam Street</p>
           <p>New York, NY 535022</p>
-          <p>United States</p>
-          <p class="mt-4"><strong>Phone:</strong> <span>+1 5589 55488 55</span></p>
-          <p><strong>Email:</strong> <span>info@example.com</span></p>
+          <p>Estados Unidos</p>
+          <p class="mt-4"><strong>Teléfono:</strong> <span>+1 5589 55488 55</span></p>
+          <p><strong>Correo:</strong> <span>info@example.com</span></p>
         </div>
 
       </div>
     </div>
 
     <div class="container copyright text-center mt-4">
-      <p>© <span>Copyright</span> <strong class="px-1 sitename">Logis</strong> <span>All Rights Reserved</span></p>
+      <p>© <span>Copyright</span> <strong class="px-1 sitename">Red Nacional</strong> <span>Todos los derechos reservados</span></p>
       <div class="credits">
         <!-- All the links in the footer should remain intact. -->
         <!-- You can delete the links only if you've purchased the pro version. -->

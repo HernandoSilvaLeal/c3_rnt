@@ -117,6 +117,38 @@ h6 {
   background: rgba(198, 16, 0, 0);
 }
 
+/* ——— Logo más grande sin romper el header ——— */
+
+/* 1) Anula límites del theme y conserva proporción */
+.header .logo > img.site-logo {
+  max-height: none;    /* el theme lo fija a 36–40px: lo anulamos */
+  height: 40px;        /* base móvil */
+  width: auto;
+  display: block;
+}
+
+/* 2) Escalado por breakpoints */
+@media (min-width: 576px) {   /* sm: móviles grandes / phablets */
+  .header .logo > img.site-logo { height: 48px; }
+}
+@media (min-width: 768px) {   /* md: tablets */
+  .header .logo > img.site-logo { height: 56px; }
+}
+@media (min-width: 992px) {   /* lg: desktop estándar */
+  .header .logo > img.site-logo { height: 64px; }
+}
+@media (min-width: 1400px) {  /* xxl: monitores grandes */
+  .header .logo > img.site-logo { height: 72px; }
+}
+
+/* 3) Si el theme fuerza altura del header, lo hacemos flexible */
+.header { height: auto; }
+
+/* 4) Al contraerse el header por scroll, compacta un poco (opcional) */
+.scrolled .header .logo > img.site-logo {
+  height: 52px;
+}
+
 .pulsating-play-btn:after {
   content: "";
   position: absolute;
