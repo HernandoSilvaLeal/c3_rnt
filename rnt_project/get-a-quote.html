@@ -4,9 +4,9 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>RNT - Cotización</title>
-  <meta name="description" content="">
-  <meta name="keywords" content="">
+  <title>Cotizar Envío - Red Nacional | Cotización Inmediata Online</title>
+  <meta name="description" content="Solicita tu cotización de transporte online. Completa el formulario con origen, destino, peso y dimensiones. Respuesta en menos de 2 horas. Tarifas competitivas 2024.">
+  <meta name="keywords" content="cotizar envío colombia, cotización transporte online, calcular costo envío, presupuesto transporte carga, solicitar tarifa">
 
   <!-- Favicons -->
   <link href="assets/img/favicon.png" rel="icon">
@@ -91,8 +91,8 @@
     <!-- Page Title -->
     <div class="page-title dark-background" data-aos="fade" style="background-image: url(assets/img/page-title-bg.jpg);">
       <div class="container position-relative">
-        <h1>Solicitar cotización</h1>
-        <p>Obtén una cotización precisa y rápida para tus necesidades de transporte. Completa el formulario y nuestro equipo se pondrá en contacto contigo a la brevedad.</p>
+        <h1>Cotiza tu Envío</h1>
+        <p>Obtén una cotización personalizada en menos de 2 horas. Sin compromisos. Completa el formulario con los detalles de tu envío y te responderemos con una tarifa competitiva ajustada a tus necesidades.</p>
         <nav class="breadcrumbs">
           <ol>
             <li><a href="index.html">Inicio</a></li>
@@ -113,53 +113,76 @@
 
           <div class="col-lg-7" data-aos="fade-up" data-aos-delay="200">
             <form action="forms/get-a-quote.php" method="post" class="php-email-form">
-              <h3>Solicita una cotización</h3>
-              <p>Proporciónanos los detalles de tu envío y te ofreceremos una tarifa competitiva y ajustada a tus necesidades.</p>
+              <h3>Información del Envío</h3>
+              <p>Completa los datos de tu envío. Todos los campos son obligatorios para calcular una cotización precisa.</p>
 
               <div class="row gy-4">
 
                 <div class="col-md-6">
-                  <input type="text" name="departure" class="form-control" placeholder="Ciudad de origen" required="">
+                  <input type="text" name="departure" class="form-control" placeholder="Ciudad de origen (ej: Bogotá)" required="">
                 </div>
 
                 <div class="col-md-6">
-                  <input type="text" name="delivery" class="form-control" placeholder="Ciudad de destino" required="">
+                  <input type="text" name="delivery" class="form-control" placeholder="Ciudad de destino (ej: Medellín)" required="">
                 </div>
 
                 <div class="col-md-6">
-                  <input type="text" name="weight" class="form-control" placeholder="Peso total (kg)" required="">
+                  <input type="text" name="weight" class="form-control" placeholder="Peso total en kg (ej: 25)" required="">
                 </div>
 
                 <div class="col-md-6">
-                  <input type="text" name="dimensions" class="form-control" placeholder="Dimensiones (cm)" required="">
+                  <input type="text" name="dimensions" class="form-control" placeholder="Dimensiones en cm (Largo x Ancho x Alto)" required="">
+                </div>
+
+                <div class="col-12">
+                  <select name="service_type" class="form-control" required="">
+                    <option value="">Selecciona el tipo de servicio</option>
+                    <option value="flete_nacional">Flete Nacional - Desde $45.000</option>
+                    <option value="flete_regional">Flete Regional - Desde $35.000</option>
+                    <option value="flete_urbano">Flete Urbano - Desde $25.000</option>
+                    <option value="mensajeria">Mensajería (hasta 3kg) - Desde $18.000</option>
+                  </select>
                 </div>
 
                 <div class="col-lg-12">
-                  <h4>Tus datos personales</h4>
+                  <h4>Tus Datos de Contacto</h4>
                 </div>
 
-                <div class="col-12">
-                  <input type="text" name="name" class="form-control" placeholder="Nombre" required="">
+                <div class="col-md-6">
+                  <input type="text" name="name" class="form-control" placeholder="Nombre completo" required="">
                 </div>
 
-                <div class="col-12 ">
+                <div class="col-md-6">
+                  <input type="text" name="company" class="form-control" placeholder="Empresa (opcional)">
+                </div>
+
+                <div class="col-md-6">
                   <input type="email" class="form-control" name="email" placeholder="Correo electrónico" required="">
                 </div>
 
-                <div class="col-12">
-                  <input type="text" name="phone" class="form-control" placeholder="Teléfono" required="">
+                <div class="col-md-6">
+                  <input type="text" name="phone" class="form-control" placeholder="Teléfono (ej: 3001234567)" required="">
                 </div>
 
                 <div class="col-12">
-                  <textarea class="form-control" name="message" rows="6" placeholder="Mensaje" required=""></textarea>
+                  <textarea class="form-control" name="message" rows="4" placeholder="Información adicional sobre tu envío (tipo de mercancía, servicios adicionales requeridos, etc.)"></textarea>
+                </div>
+
+                <div class="col-12">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="seguro" name="seguro">
+                    <label class="form-check-label" for="seguro">
+                      Deseo agregar seguro adicional (2% del valor declarado)
+                    </label>
+                  </div>
                 </div>
 
                 <div class="col-12 text-center">
-                  <div class="loading">Cargando</div>
+                  <div class="loading">Enviando solicitud...</div>
                   <div class="error-message"></div>
-                  <div class="sent-message">Tu solicitud de cotización ha sido enviada. ¡Gracias!</div>
+                  <div class="sent-message">¡Tu solicitud de cotización ha sido enviada! Te responderemos en menos de 2 horas.</div>
 
-                  <button type="submit">Obtener cotización</button>
+                  <button type="submit">Solicitar Cotización Gratis</button>
                 </div>
 
               </div>
@@ -205,21 +228,21 @@
         <div class="col-lg-2 col-6 footer-links">
           <h4>Nuestros servicios</h4>
           <ul>
-            <li><a href="#">Diseño web</a></li>
-            <li><a href="#">Desarrollo web</a></li>
-            <li><a href="#">Gestión de producto</a></li>
-            <li><a href="#">Marketing</a></li>
-            <li><a href="#">Diseño gráfico</a></li>
+            <li><a href="services.html">Transporte de Carga</a></li>
+            <li><a href="services.html">Encomiendas</a></li>
+            <li><a href="services.html">Mensajería</a></li>
+            <li><a href="services.html">Carga Aérea</a></li>
+            <li><a href="services.html">Almacenamiento</a></li>
           </ul>
         </div>
 
         <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
           <h4>Contáctanos</h4>
-          <p>A108 Adam Street</p>
-          <p>New York, NY 535022</p>
-          <p>Estados Unidos</p>
-          <p class="mt-4"><strong>Teléfono:</strong> <span>+1 5589 55488 55</span></p>
-          <p><strong>Correo:</strong> <span>info@example.com</span></p>
+          <p>Calle 13 # 68-55, Bodega 12</p>
+          <p>Puente Aranda, Bogotá</p>
+          <p>Colombia</p>
+          <p class="mt-4"><strong>Teléfono:</strong> <span>+57 (601) 411 2233</span></p>
+          <p><strong>Correo:</strong> <span>info@rednacional.com.co</span></p>
         </div>
 
       </div>
