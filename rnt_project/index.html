@@ -60,21 +60,12 @@
           <li><a href="about.html">Nosotros</a></li>
           <li><a href="services.html">Servicios</a></li>
           <li><a href="pricing.html">Tarifas</a></li>
-          <li class="dropdown"><a href="#"><span>Menú</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+          <li class="dropdown"><a href="#"><span>Recursos</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul>
-              <li><a href="#">Menú 1</a></li>
-              <li class="dropdown"><a href="#"><span>Submenú</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-                <ul>
-                  <li><a href="#">Submenú 1</a></li>
-                  <li><a href="#">Submenú 2</a></li>
-                  <li><a href="#">Submenú 3</a></li>
-                  <li><a href="#">Submenú 4</a></li>
-                  <li><a href="#">Submenú 5</a></li>
-                </ul>
-              </li>
-              <li><a href="#">Menú 2</a></li>
-              <li><a href="#">Menú 3</a></li>
-              <li><a href="#">Menú 4</a></li>
+              <li><a href="get-a-quote.html">Cotizar envío</a></li>
+              <li><a href="#rastreo">Rastrear guía</a></li>
+              <li><a href="pricing.html">Ver tarifas</a></li>
+              <li><a href="https://wa.me/573124376616" target="_blank">WhatsApp</a></li>
             </ul>
           </li>
           <li><a href="contact.html">Contacto</a></li>
@@ -100,10 +91,23 @@
             <h2 data-aos="fade-up">Transporte de carga y encomiendas en todo Colombia</h2>
             <p data-aos="fade-up" data-aos-delay="100">Recogemos en Bogotá y entregamos a nivel nacional. Tarifas transparentes, rastreo en tiempo real y más de 15 años de experiencia conectando a Colombia con tus envíos.</p>
 
-            <form action="#" class="form-search d-flex align-items-stretch mb-3" data-aos="fade-up" data-aos-delay="200">
-              <input type="text" class="form-control" placeholder="Rastrea tu guía ⮕ Ej: RNT1234567890" required  >
+            <form id="heroRastreoForm" class="form-search d-flex align-items-stretch mb-3" data-aos="fade-up" data-aos-delay="200">
+              <input type="text" id="heroGuiaInput" class="form-control" placeholder="Ingresá el número de guía para rastrear tu envío" required>
               <button type="submit" class="btn btn-primary">Rastrear envío</button>
             </form>
+
+            <script>
+              document.getElementById('heroRastreoForm')?.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const guia = document.getElementById('heroGuiaInput').value.trim();
+                if (guia && window.RNT_Rastreo) {
+                  window.RNT_Rastreo.buscar(guia);
+                } else if (guia) {
+                  const url = `https://mail.rednacionaldetransportes.com/rastreo/lista_rastreo.php?guia=${encodeURIComponent(guia)}`;
+                  window.open(url, '_blank');
+                }
+              });
+            </script>
 
             <div class="row gy-4" data-aos="fade-up" data-aos-delay="300">
 
@@ -773,26 +777,20 @@
 
         <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
           <h4>Contáctanos</h4>
-          <p>Calle 13 # 68-55, Bodega 12</p>
-          <p>Zona Industrial Montevideo</p>
+          <p>Calle 14 Sur No. 18A-30</p>
+          <p>Barrio Restrepo</p>
           <p>Bogotá D.C., Colombia</p>
-          <p class="mt-4"><strong>Teléfono:</strong> <span>+57 (601) 411 2233</span></p>
-          <p><strong>WhatsApp:</strong> <span>+57 310 456 7890</span></p>
-          <p><strong>Correo:</strong> <span>info@rednacionaldetransportes.com</span></p>
+          <p class="mt-4"><strong>PBX:</strong> <span>(601) 272 6117</span></p>
+          <p><strong>WhatsApp:</strong> <span>+57 312 437 6616</span></p>
+          <p><strong>Correo:</strong> <span>servicioalcliente@rednacionaldetransportes.com</span></p>
         </div>
 
       </div>
     </div>
 
     <div class="container copyright text-center mt-4">
-      <p>© <span>Copyright</span> <strong class="px-1 sitename">Red Nacional</strong> <span>Todos los derechos reservados</span></p>
-      <div class="credits">
-        <!-- All the links in the footer should remain intact. -->
-        <!-- You can delete the links only if you've purchased the pro version. -->
-        <!-- Licensing information: https://bootstrapmade.com/license/ -->
-        <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
-        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
-      </div>
+      <p>© <span>Copyright 2026 </span><strong class="px-1 sitename">Red Nacional de Transportes S.A.S.</strong></p>
+      <p class="small">NIT 901.040.715-7 | Todos los derechos reservados</p>
     </div>
 
   </footer>
