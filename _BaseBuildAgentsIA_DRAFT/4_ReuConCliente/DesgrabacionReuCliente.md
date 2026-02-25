@@ -10,7 +10,7 @@ YO HERNANDO SILVA SOY QUIEN ESTA ENCARGADO DE REALIZAR TODO A NOMBRE DE APPCORS 
 
 EL ES FABIAN, ES DECIR EL CLIENTE, Y REPRESENTA A REDNACIONAL DE TRANSPORTE
 
-
+DESGRABACIOND E LA REUNION ENTRE HERNANDO APPCORS Y FABIAN RNT (Red Nacional de Transporte)
 [0:00 - 0:59] que es un centro logístico es de dónde
 entra la carga y hacia dónde va.
 Entonces, estamos hablando en este caso,
