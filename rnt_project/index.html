@@ -60,21 +60,12 @@
           <li><a href="about.html">Nosotros</a></li>
           <li><a href="services.html">Servicios</a></li>
           <li><a href="pricing.html">Tarifas</a></li>
-          <li class="dropdown"><a href="#"><span>Menú</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+          <li class="dropdown"><a href="#"><span>Recursos</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul>
-              <li><a href="#">Menú 1</a></li>
-              <li class="dropdown"><a href="#"><span>Submenú</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-                <ul>
-                  <li><a href="#">Submenú 1</a></li>
-                  <li><a href="#">Submenú 2</a></li>
-                  <li><a href="#">Submenú 3</a></li>
-                  <li><a href="#">Submenú 4</a></li>
-                  <li><a href="#">Submenú 5</a></li>
-                </ul>
-              </li>
-              <li><a href="#">Menú 2</a></li>
-              <li><a href="#">Menú 3</a></li>
-              <li><a href="#">Menú 4</a></li>
+              <li><a href="get-a-quote.html">Cotizar envío</a></li>
+              <li><a href="#rastreo">Rastrear guía</a></li>
+              <li><a href="pricing.html">Ver tarifas</a></li>
+              <li><a href="https://wa.me/573124376616" target="_blank">WhatsApp</a></li>
             </ul>
           </li>
           <li><a href="contact.html">Contacto</a></li>
@@ -100,10 +91,23 @@
             <h2 data-aos="fade-up">Transporte de carga y encomiendas en todo Colombia</h2>
             <p data-aos="fade-up" data-aos-delay="100">Recogemos en Bogotá y entregamos a nivel nacional. Tarifas transparentes, rastreo en tiempo real y más de 15 años de experiencia conectando a Colombia con tus envíos.</p>
 
-            <form action="#" class="form-search d-flex align-items-stretch mb-3" data-aos="fade-up" data-aos-delay="200">
-              <input type="text" class="form-control" placeholder="Rastrea tu guía ⮕ Ej: RNT1234567890" required  >
+            <form id="heroRastreoForm" class="form-search d-flex align-items-stretch mb-3" data-aos="fade-up" data-aos-delay="200">
+              <input type="text" id="heroGuiaInput" class="form-control" placeholder="Ingresá el número de guía para rastrear tu envío" required>
               <button type="submit" class="btn btn-primary">Rastrear envío</button>
             </form>
+
+            <script>
+              document.getElementById('heroRastreoForm')?.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const guia = document.getElementById('heroGuiaInput').value.trim();
+                if (guia && window.RNT_Rastreo) {
+                  window.RNT_Rastreo.buscar(guia);
+                } else if (guia) {
+                  const url = `https://mail.rednacionaldetransportes.com/rastreo/lista_rastreo.php?guia=${encodeURIComponent(guia)}`;
+                  window.open(url, '_blank');
+                }
+              });
+            </script>
 
             <div class="row gy-4" data-aos="fade-up" data-aos-delay="300">
 
@@ -130,8 +134,8 @@
 
               <div class="col-lg-3 col-6">
                 <div class="stats-item text-center w-100 h-100">
-                  <span data-purecounter-start="0" data-purecounter-end="5" data-purecounter-duration="0" class="purecounter">5</span>
-                  <p>Sedes en Colombia</p>
+                  <span data-purecounter-start="0" data-purecounter-end="12" data-purecounter-duration="0" class="purecounter">12</span>
+                  <p>Puntos de despacho</p>
                 </div>
               </div><!-- End Stats Item -->
 
@@ -335,6 +339,56 @@
       </div>
 
     </section><!-- /Call To Action Section -->
+
+    <!-- Rastreo Section -->
+    <section id="rastreo" class="rastreo section">
+
+      <div class="container section-title" data-aos="fade-up">
+        <span>Rastreá tu envío</span>
+        <h2>Rastreá tu envío</h2>
+        <p>Ingresá el número de guía para consultar el estado de tu envío en tiempo real</p>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-7">
+            <div class="rastreo-card" data-aos="fade-up" data-aos-delay="100">
+              <form id="rntRastreoForm" class="rastreo-form">
+                <div class="rastreo-input-group">
+                  <input 
+                    type="text" 
+                    id="rntGuia" 
+                    name="guia" 
+                    class="form-control" 
+                    placeholder="Ej: 123456789" 
+                    required
+                  >
+                  <button type="submit" id="rntRastrearBtn" class="btn btn-primary">
+                    <i class="bi bi-search"></i> Rastrear
+                  </button>
+                </div>
+              </form>
+              
+              <div class="rastreo-info mt-4">
+                <p class="text-muted">
+                  <i class="bi bi-info-circle"></i> 
+                  Ingresá el número de guía que aparece en tu comprobante de envío. 
+                  Si tenés alguna duda, contactanos vía WhatsApp.
+                </p>
+                <div class="text-center mt-3">
+                  <a href="https://wa.me/573124376616?text=Necesito ayuda con el rastreo de mi guía" 
+                     class="btn btn-outline-success btn-sm" 
+                     target="_blank">
+                    <i class="bi bi-whatsapp"></i> Ayuda por WhatsApp
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section><!-- /Rastreo Section -->
 
     <!-- Features Section -->
     <section id="features" class="features section">
@@ -723,26 +777,20 @@
 
         <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
           <h4>Contáctanos</h4>
-          <p>Calle 13 # 68-55, Bodega 12</p>
-          <p>Zona Industrial Montevideo</p>
+          <p>Calle 14 Sur No. 18A-30</p>
+          <p>Barrio Restrepo</p>
           <p>Bogotá D.C., Colombia</p>
-          <p class="mt-4"><strong>Teléfono:</strong> <span>+57 (601) 411 2233</span></p>
-          <p><strong>WhatsApp:</strong> <span>+57 310 456 7890</span></p>
-          <p><strong>Correo:</strong> <span>info@rednacionaldetransportes.com</span></p>
+          <p class="mt-4"><strong>PBX:</strong> <span>(601) 272 6117</span></p>
+          <p><strong>WhatsApp:</strong> <span>+57 312 437 6616</span></p>
+          <p><strong>Correo:</strong> <span>servicioalcliente@rednacionaldetransportes.com</span></p>
         </div>
 
       </div>
     </div>
 
     <div class="container copyright text-center mt-4">
-      <p>© <span>Copyright</span> <strong class="px-1 sitename">Red Nacional</strong> <span>Todos los derechos reservados</span></p>
-      <div class="credits">
-        <!-- All the links in the footer should remain intact. -->
-        <!-- You can delete the links only if you've purchased the pro version. -->
-        <!-- Licensing information: https://bootstrapmade.com/license/ -->
-        <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
-        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
-      </div>
+      <p>© <span>Copyright 2026 </span><strong class="px-1 sitename">Red Nacional de Transportes S.A.S.</strong></p>
+      <p class="small">NIT 901.040.715-7 | Todos los derechos reservados</p>
     </div>
 
   </footer>
@@ -763,6 +811,21 @@
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
+
+  <!-- Rastreo RNT -->
+  <script src="assets/js/rastreo-rnt.js"></script>
+
+  <!-- WhatsApp Float Button -->
+  <a href="https://wa.me/573124376616?text=Hola%2C%20me%20interesa%20informaci%C3%B3n%20sobre%20sus%20servicios%20de%20transporte"
+     class="whatsapp-float"
+     target="_blank"
+     rel="noopener noreferrer"
+     aria-label="Contactar por WhatsApp">
+    <span class="wa-tooltip">¿Necesitas ayuda?</span>
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+    </svg>
+  </a>
 
 </body>
 
